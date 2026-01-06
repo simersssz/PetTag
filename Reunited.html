@@ -1,0 +1,530 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon" type="image/PetTag-icon" href="Images/Favicon.ico">	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Happy Pets</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+		flex-direction: column;
+      margin: 0;
+    }
+	  
+	.navbar {
+  		position: fixed;
+  		top: 0;
+  		left: 0;
+  		width: 100%;
+  		background-color: #2EC4B6;
+  		display: flex;
+  		align-items: stretch;
+  		justify-content: space-around;
+  		z-index: 1000;
+	}
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+	.navbar a {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		padding: 0 30px;
+  		text-decoration: none;
+  		color: white;
+  		font-weight: bold;
+  		transition: all 0.3s ease;
+  		height: 100%;
+	}
+
+	.navbar a:hover {
+  		background-color: #24A696;
+	}
+	  
+    .content {
+      padding: auto;
+		
+    }
+
+	.content-inside {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+	  
+    .form-container {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+		height: auto;
+		margin: 0px 20px 20px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #000;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .form-row input {
+      width: 100%;
+    }
+
+    button1 {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #32D0C4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button1:hover {
+      background-color: #2FAAA0;
+    }
+	  
+    button2 {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #FFFFFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button2:hover {
+      background-color: #E4E4E4;
+    }
+	  
+	.content-main2 {
+		display: flex;
+		flex-direction: row;
+		margin-top: 0px;
+      	padding: 20px;
+		align-items: flex-start;
+	  }
+	  
+	.content-main1 {
+		margin-top: 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		background: #D0D0D0;
+	  }
+	  
+	 .navbar-background {
+  		position: relative;
+  		color: white;
+  		text-align: center;
+  		top: 40%;
+	  }
+	  
+	.video-section {
+		position: relative;
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		margin-top: 100px
+		}
+
+	.bg-video {
+  		position: absolute;
+  		top: 0;
+  		left: 0;
+ 		width: 100%;
+  		height: 100%;
+  		object-fit: cover;
+  		z-index: -1;      
+}
+
+	  .pet-card {
+		  width: 400px;
+		  border: 1px solid #ccc;
+		  border-radius: 10px;
+		  overflow: hidden;
+		  text-align: center;
+		  transition: 0.3s;
+	  }
+	  
+	  .pet-card:hover{
+		  transform: scale(1.05);
+	  }
+
+	  .pet-photo {
+		  aspect-ratio: 1 / 1;
+		  overflow: hidden;
+	  }
+	  
+	  .pet-photo img {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+	  }
+	  
+	  .pet-info h3{
+		  color: grey;
+		  font-size: 25px;
+	  }
+	  
+	  .pet-info p{
+		  border-radius: 5px;
+		  width: 350px;
+		  height: auto;
+		  color: black;
+		  display: -webkit-box;
+  		  -webkit-line-clamp: 4;
+  	 	  -webkit-box-orient: vertical;
+		  overflow: hidden;
+	  }
+	  
+	  .button-social{
+		  background-color: #FFDE59;
+		  padding: 5px;
+		  color: white;
+		  text-shadow: 0px 0px 10px grey;
+		  font-family: calibri;
+		  border-radius: 5px;
+		  box-shadow: 0px 3px 0 0 #9A873A;
+		  text-align: center;
+		  font-weight: bold;
+	  }
+	  
+	  .button-social:hover{
+		  box-shadow: 0px 5px 0 0 #9A873A;
+		  transform: translateY(-3px);
+	  }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <div class="logo"><img src="Images/Logo.png" width="232" height="70" alt=""/></div>
+    <a href="Home.html"><img src="Images/HOME.png" alt="Home" width="200"></a>
+	<a href="Reports.html"><img src="Images/REPORTS.png" alt="Reports" width="200"></a>
+	<a href="Tracker.html"><img src="Images/TRACKER.png" alt="Tracker" width="200"></a>
+	<a href="Reunited.html"><img src="Images/REUNITEDPETS.png" alt="Reunited" width="200"></a>
+  </div>
+	
+	<div class="video-section">
+  		<video autoplay muted loop playsinline class="bg-video">
+    		<source src="Images/REUINTEDVID.mp4" type="video/mp4">
+  		</video>
+
+  		<div class="navbar-background">
+			<p style="font-size: 100px; text-align: center; font-family: Arial; color: white; text-shadow: 0px 0px 50px grey;"><strong>See Our Happy Pets Stories</strong></p>
+  		</div>
+	</div>
+	
+	<div class="content-main1" style="align-items: center; background-image: url(Images/PATTERN2.png); background-repeat: repeat;" id="content-main-story">
+		<div style="margin: 50px 0px 35px 0px">
+			
+		</div>
+		<div style="display: flex; flex-direction: row; margin-top: 0px">	
+		<div class="content-inside" style="width: 400px;  margin: 20px">
+			<a href="Kiwi.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/Reunited/Kiwi.png" alt="Highlight 1">
+					</div>
+				</div>
+				<div class="pet-info">
+					<div style="display: flex; flex-direction: row; justify-content: center">
+						<div><h3 style="margin-bottom: 0px;">Kiwi, The Red Parrot</h3>
+						</div>
+						<div style="width: auto; height: auto; display: flex; flex-direction: column">
+						</div>
+				  </div>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+					  <p style="background-color: white; color: black; margin: 10px 0px 0px 0px; text-align: justify; font-size: 18px;">Kiwi was the life of the house. She loved mimicking laughter and shouting “Good morning!” every sunrise. But one windy afternoon in Bali, someone forgot to latch her cage properly — and Kiwi flew away. Her family searched high and low, leaving her favorite fruit and calling her name in every corner. The silence was unbearable. A few days later, a temple caretaker posted on PetTAG that a blue parrot had been perching near the temple gate, responding when people spoke. The family rushed there, calling out, “Kiwi!” The parrot turned, tilted her head, and suddenly flew toward them — landing right on their shoulder. “When she heard our voices, she screamed ‘Hello!’ and started laughing,” her owner said, tears of joy streaming down.</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="content-inside" style="width: 400px;  margin: 20px">
+			<a href="Milo.html" style="text-decoration: none">				
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/Reunited/Milo.png" alt="Highlight 1">
+					</div>
+				</div>
+				<div class="pet-info">
+					<div style="display: flex; flex-direction: row; justify-content: center">
+						<div><h3 style="margin-bottom: 0px;">Milo, The Street Explorer</h3>
+						</div>
+						<div style="width: auto; height: auto; display: flex; flex-direction: column">
+						</div>
+				  </div>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+					  <p style="background-color: white; color: black; margin: 10px 0px 0px 0px; text-align: justify; font-size: 18px;">Milo hated loud noises, and on New Year’s Eve in Surabaya, fireworks sent him bolting out the gate. His family ran after him, but the streets were chaos — and Milo vanished into the night. They used PetTAG to issue a lost alert and spent days searching markets, shelters, even roadside stalls. The next morning, a street vendor scanned a dog’s tag after seeing him sitting quietly beside his cart. Within minutes, PetTAG connected him to Milo’s owner. When they reunited, Milo wagged his tail so hard he almost toppled over. “He looked guilty, like he knew he’d scared us half to death,” laughed his owner. “But when he leaned on my leg, I knew we were okay.”</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="content-inside" style="width: 400px;  margin: 20px">
+		<a href="Oliver.html" style="text-decoration: none;">
+			<div class="pet-card">
+				<div class="pet-photo">
+					<img src="Images/Reunited/Oliver.png" alt="Highlight 1">
+				</div>
+			</div>
+				<div class="pet-info">
+					<div style="display: flex; flex-direction: row; justify-content: center">
+						<div><h3 style="margin-bottom: 0px;">Oliver, The Travelling Turtle</h3>
+						</div>
+						<div style="width: auto; height: auto; display: flex; flex-direction: column">
+						</div>
+				  </div>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+					  <p style="background-color: white; color: black; margin: 10px 0px 0px 0px; text-align: justify; font-size: 18px;">Most turtles don’t go far, but Oliver was no ordinary turtle. Rafi raised him since college — a tiny creature who somehow became his best friend. One morning, after cleaning the backyard pond, Rafi realized Oliver was gone. He thought it was impossible — turtles move slowly! Days passed, but Oliver never returned. Two weeks later, a pet shop in Depok received a small turtle found near their doorstep. They scanned his PetTAG, and Rafi’s name appeared immediately. When Rafi came to pick him up, the shop owner smiled and said, “He must’ve been on quite a journey.” Rafi just laughed, holding Oliver gently. “Welcome home, little traveler.” 🐢</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	
+	<div style="display: flex; flex-direction: row; justify-content: center;">
+		<div style="display: flex; flex-direction: row; justify-content: center;">
+			<p></p>
+		</div>
+		<div class="content-inside" style="width: 400px;  margin: 20px">
+			<a href="Snowy.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/Reunited/Snowy.png" alt="Highlight 1">
+					</div>
+				</div>
+				<div class="pet-info">
+					<div style="display: flex; flex-direction: row; justify-content: center">
+						<div><h3 style="margin-bottom: 0px;">Snowy, The Garden Bunny</h3>
+						</div>
+						<div style="width: auto; height: auto; display: flex; flex-direction: column">
+						</div>
+				  </div>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+					  <p style="background-color: white; color: black; margin: 10px 0px 0px 0px; text-align: justify; font-size: 18px;">Snowy was Alya’s little companion — gentle, fluffy, and always nibbling on leaves. One sunny morning, she noticed a hole in the garden fence... and Snowy was gone. Alya panicked and immediately reported it through PetTAG, adding a photo and her contact info. That afternoon, her neighbor messaged her after spotting a small white bunny hopping around their backyard. When Alya arrived, she found Snowy munching peacefully on lettuce. The moment Snowy saw her, she froze — then hopped over and nuzzled her feet. “She looked like she was saying sorry,” Alya smiled. “I never thought I could love a rabbit this much.” 🐰</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="content-inside" style="width: 400px;  margin: 20px">
+			<a href="Bella.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/Reunited/Bella.png" alt="Highlight 1">
+					</div>
+				</div>
+				<div class="pet-info">
+					<div style="display: flex; flex-direction: row; justify-content: center">
+						<div><h3 style="margin-bottom: 0px;">Bella,&nbsp;The Lost Golden Retriever</h3>
+						</div>
+						<div style="width: auto; height: auto; display: flex; flex-direction: column">
+						</div>
+				  </div>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+					  <p style="background-color: white; color: black; margin: 10px 0px 0px 0px; text-align: justify; font-size: 18px;">After being missing for almost two weeks, Bella was finally found wandering near a park in Bandung. Thanks to a PetTAG alert shared online, her owner, Nadia, received a call from a kind jogger who recognized Bella’s tag. Nadia spent days putting up posters, calling shelters, and asking neighbors. Every night felt longer than the last. Two weeks later, a kind jogger named Dimas saw a familiar-looking dog wandering near Taman Lansia, Bandung. He scanned the PetTAG on Bella’s collar and instantly got Nadia’s contact. Within 15 minutes, Nadia received the best call of her life. When they finally reunited, Bella ran straight into her arms, soaking wet but wagging her tail like nothing had changed. “It felt like finding a part of my heart again,” Nadia said with tears in her eyes.</p>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="content-inside" style="width: 400px;  margin: 20px">
+			<a href="Mochi.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/Reunited/Mochi.png" alt="Highlight 1">
+					</div>
+				</div>
+				<div class="pet-info">
+					<div style="display: flex; flex-direction: row; justify-content: center">
+					  <div>
+						  <h3 style="margin-bottom: 0px;">Mochi, The Curious Cat</h3>
+					  </div>
+                  </div>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+					  <p style="background-color: white; color: black; margin: 10px 0px 0px 0px; text-align: justify; font-size: 18px;">Mochi had always been an explorer. The sound of rain usually scared him, but that night, curiosity got the better of him — and he slipped through an open window. Kevin searched every corner of their Jakarta neighborhood, shaking food bowls and calling his name. The silence that followed broke his heart. Three days later, a PetTAG alert pinged on Kevin’s phone: a neighbor had spotted a white cat with a pink collar hiding under a parked car. When Kevin arrived, he crouched down and softly called, “Mochi?” The cat blinked, meowed once, and crawled out — purring the moment Kevin picked him up. “He smelled like dust and adventure,” Kevin laughed, “but he’s finally home.”</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+		<div style="align-items: center; margin-bottom: 50px; margin-top: 50px">
+			<a style="text-decoration: none" href="Add a New Story.html"><div class="button-social" style="font-size: 30px; padding: 15px 30px 15px 30px; border-radius: 20px" id="bottomButtonWrapperStory">Share Your Happy Story Too!</div></a>
+		</div>
+	</div>
+	
+	<!--Footer-->
+	<div class="content-main1" style="background-color: white; padding-top: 50px">
+		<div style="display: flex; flex-direction: row; justify-content: center">
+			<div style="width: 500px; display: flex; flex-direction: column; align-items: center" >
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Contact Our Helpers</h1>
+				<div style="width: 250px">
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +1-776-8800-7744</li>
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-877-6677-0005</li>
+					<li type="none"><img src="Images/emailsilhouette.png" alt="Telephone" width="15px"> pettagofficial@gmail.com</li>
+			  </div>
+			</div>
+			<div style="width: 500px; display: flex; flex-direction: column; align-items: center">
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Visit Our Social Media</h1>
+				<div style="width: 250px">
+				  <li type="none"><img src="Images/Instagram.png" alt="Instagram" width="15px"> @pettag</li>
+					<li type="none"><img src="Images/Facebook.png" alt="Facebook" width="15px"> @pettaghelper</li>
+					<li type="none"><img src="Images/X.png" alt="X" width="15px"> @pettag</li>
+			  </div>
+			</div>
+						<div style="width: 500px; display: flex; flex-direction: column; align-items: center">
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Seek for Veterinarians</h1>
+				<div style="width: 250px">
+				  <li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-851-7163-2227</li>
+					<li type="none"><a href="https://sl1nk.com/Ud5SB" style="text-decoration: none; color: black;"><img src="Images/websitesilhouette.png" alt="Telephone" width="15px"> https://sl1nk.com/Ud5SB</a></li>
+					<li type="none"><a href="https://dokterhewanbandung.com" style="text-decoration: none; color: black;"><img src="Images/websitesilhouette.png" alt="Telephone" width="15px"> https://dokterhewanbandung.com</a></li>
+			  </div>
+		  </div>
+		</div>
+		<div>
+			<p style="text-align:center; font-style:italic; color:#555; font-size: 65px; font-family: times new roman">"Connecting pets, reuniting hearts."</p>
+		</div>
+		
+		<img src="Images/FOOTER.png" alt="Footer" width="100%">	
+	</div>
+	
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+		  const container = document.getElementById("content-main-story");
+		  const bottomButton = document.getElementById("bottomButtonWrapperStory");
+		  const stories = JSON.parse(localStorage.getItem("reunitedStories")) || [];
+
+		  console.log("Reunited: found container?", !!container, "bottomButton?", !!bottomButton, "stories count:", stories.length);
+
+		  if (!container) {
+			console.error("Container with id 'content-main-story' not found. Add it into the HTML.");
+			return;
+		  }
+
+		  if (stories.length === 0) {
+			console.log("No stories to render.");
+			return;
+		  }
+
+		  let currentRow;
+
+		  stories.forEach((story, index) => {
+			// buat row baru setiap 3 postingan
+			if (index % 3 === 0) {
+			  currentRow = document.createElement("div");
+			  currentRow.classList.add("content-row");
+			  currentRow.style.display = "flex";
+			  currentRow.style.flexWrap = "wrap";
+			  currentRow.style.justifyContent = "center";
+			  currentRow.style.marginBottom = "30px";
+
+			  // cari reference node yang merupakan child langsung dari container
+			  let refNode = bottomButton || null;
+			  if (refNode) {
+				// naik sampai menemukan parent yang langsung anak container
+				while (refNode && refNode.parentElement !== container) {
+				  refNode = refNode.parentElement;
+				}
+			  }
+
+			  if (refNode && refNode.parentElement === container) {
+				container.insertBefore(currentRow, refNode);
+			  } else {
+				// fallback: append ke akhir container
+				container.appendChild(currentRow);
+			  }
+			}
+
+			const card = document.createElement("div");
+			card.classList.add("content-inside");
+			card.style.width = "400px";
+			card.style.margin = "20px";
+			card.style.cursor = "pointer";
+
+			// safe guard untuk field story.story jika undefined
+			const longText = (story && story.story) ? story.story : (story && story.text ? story.text : "");
+			const shortStory = longText.length > 220 ? longText.slice(0, 220) + "..." : longText;
+
+			card.innerHTML = `
+			  <a href="#" style="text-decoration: none;">
+				<div class="pet-card">
+				  <div class="pet-photo">
+					<img src="${story.image || ''}" style="width: 100%; height: auto; border-radius: 10px;">
+				  </div>
+				</div>
+				<div class="pet-info">
+				  <div style="display: flex; justify-content: center;">
+					<h3 style="margin-bottom: 0;">${story.title || 'Untitled'}</h3>
+				  </div>
+				  <div style="display: flex; justify-content: center;">
+					<p style="text-align: justify; font-size: 18px; margin-top: 10px; background-color: none;">${shortStory}</p>
+				  </div>
+				</div>
+			  </a>
+			`;
+
+			// klik → buka detail page
+			card.addEventListener("click", () => {
+			  localStorage.setItem("selectedReunitedStory", JSON.stringify(story));
+			  window.location.href = "StoryDetail.html";
+			});
+
+			// append ke row (currentRow seharusnya sudah ada)
+			if (currentRow) {
+			  currentRow.appendChild(card);
+			} else {
+			  // safety fallback: append langsung ke container
+			  container.appendChild(card);
+			}
+		  });
+		});
+	</script>
+
+</body>
+</html>

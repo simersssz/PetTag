@@ -1,0 +1,425 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon" type="image/PetTag-icon" href="Images/Favicon.ico">	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+		flex-direction: column;
+      margin: 0;
+    }
+	  
+	.navbar {
+  		position: fixed;
+  		top: 0;
+  		left: 0;
+  		width: 100%;
+  		background-color: #2EC4B6;
+  		display: flex;
+  		align-items: stretch;
+  		justify-content: space-around;
+  		z-index: 1000;
+	}
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+	.navbar a {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		padding: 0 30px;
+  		text-decoration: none;
+  		color: white;
+  		font-weight: bold;
+  		transition: all 0.3s ease;
+  		height: 100%;
+	}
+
+	.navbar a:hover {
+  		background-color: #24A696;
+	}
+	  
+    /* Konten dummy biar bisa discroll */
+    .content {
+      padding: auto;
+		
+    }
+
+	.content-inside {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+	  
+    .form-container {
+      background-color: white;
+      padding: 5px 20px 20px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+		height: auto;
+		margin: 0px 20px 20px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #000;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .form-row input {
+      width: 100%;
+    }
+
+    button {
+      width: 400px;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #32D0C4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+	  font-family: calibri;
+	  
+    }
+
+    button:hover {
+      background-color: #2FAAA0;
+    }
+	  
+    button2 {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #FFFFFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button2:hover {
+      background-color: #E4E4E4;
+    }
+	  
+	.content-main2 {
+		display: flex;
+		flex-direction: row;
+		margin-top: 0px;
+      	padding: 20px;
+		align-items: flex-start;
+	  }
+	  
+	.content-main1 {
+		margin-top: 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		background: #D0D0D0;
+	  }
+	  
+	  .navbar-background {
+		  width: 100%;
+		  background-image: url("Images/Background for Dock.png");
+		  margin-top: 80px;
+	  }
+
+	  .pet-card {
+		  width: 300px;
+		  border: 1px solid #ccc;
+		  border-radius: 10px;
+		  overflow: hidden;
+		  text-align: center;
+		  transition: 0.3s;
+	  }
+	  
+	  .pet-card:hover{
+		  transform: scale(1.05);
+	  }
+
+	  .pet-photo {
+		  aspect-ratio: 1 / 1;
+		  overflow: hidden;
+	  }
+	  
+	  .pet-photo img {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+	  }
+	  
+	  .pet-info h3{
+		  color: grey;
+		  font-size: 25px;
+		  margin-bottom: 0px;
+	  }
+	  
+	  .pet-info p{
+		  color: white;
+		  background-color:#8C1B1D;
+		  border-radius: 5px;
+		  font-weight: bold;
+	  }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <div class="logo"><img src="Images/Logo.png" width="232" height="70" alt=""/></div>
+    <a href="Home.html"><img src="Images/HOME.png" alt="Home" width="200"></a>
+	<a href="Reports.html"><img src="Images/REPORTS.png" alt="Reports" width="200"></a>
+	<a href="Tracker.html"><img src="Images/TRACKER.png" alt="Tracker" width="200"></a>
+	<a href="Reunited.html"><img src="Images/REUNITEDPETS.png" alt="Reunited" width="200"></a>	
+  </div>
+	
+	  <div class="navbar-background">
+		<p style="font-size: 100px; text-align: center; font-family: Arial; color: white; text-shadow: 0px 0px 50px grey;"><strong>Welcome to PetTAG</strong></p>
+	</div>
+
+<div class="content-main1" align="center" style="background-image: url(Images/PATTERN2.png); background-repeat: repeat;">
+<div class="content-main2" align="center">
+  <div class="content">
+	  <div class="content-inside" style="margin: 0px 0px 20px 20px;">
+	  	<p style="text-align: justify; letter-spacing: 1px; line-height: 30px;">PetTAG is a web-based platform designed to help pet owners report and track missing or found pets. The website allows users to quickly submit important details such as their pet’s name, address, and contact information, making it easier to spread awareness within the community.</p>
+	  </div>
+	  <div class="content-inside" style="margin: 0px 0px 20px 20px;">
+	  	<p style="text-align: justify; letter-spacing: 1px; line-height: 0px;"><strong><i class="material-icons" style="font-size: 25px; ">new_releases</i> Create an Alert&nbsp;</strong>&nbsp;</p>
+	  	<p style="text-align: justify; letter-spacing: 1px; line-height: 30px;">Fill out your pet’s details (name, description, location, and contact).&nbsp;</p>
+		<p style="text-align: justify; letter-spacing: 1px; line-height: 0px;"><strong><i class="material-icons" style="font-size: 25px; ">assignment_late</i> Spread Awareness</strong></p>
+        <p style="text-align: justify; letter-spacing: 1px; line-height: 30px;">Your report is instantly shared across the PetTAG community.</p>
+        <p style="text-align: justify; letter-spacing: 1px; line-height: 0px;"><strong><i class="material-icons" style="font-size: 25px; ">track_changes</i> Track &amp; Connect&nbsp;</strong></p>
+        <p style="text-align: justify; letter-spacing: 1px; line-height: 30px;">Use the tracker to see updates and connect with people nearby.</p>
+        <p style="text-align: justify; letter-spacing: 1px; line-height: 0px;"><strong><i class="material-icons" style="font-size: 25px; ">mood</i> Reunite Safely&nbsp;</strong></p>
+        <p style="text-align: justify; letter-spacing: 1px; line-height: 30px;">Get notifications when someone finds or reports your pet.</p>
+      </div>
+  </div>
+
+<div class="content">
+<div class="form-container">
+    <h2 style="font-size: 25px; color: #33AB8B; padding: 0px">Start Your Free Alert</h2>
+    
+	<form style="display: flex; flex-direction: column;">
+      <div class="form-row" style="width: 380px">
+        <div style="width: 180px">
+          <label>Pet Name:</label>
+          <input type="text" name="petName" placeholder="" id="petName">
+        </div>
+        <div style="width: 180px">
+          <label>Owner or Founder Location:</label>
+          <input type="text" name="address" placeholder="" id="oflocation">
+        </div>
+      </div>
+
+      <label>Status:</label>
+      <select style="width: 400px" name="status" id="status">
+        <option value="">Select one</option>
+        <option value="Lost">Lost</option>
+        <option value="Found">Found</option>
+      </select>
+
+      <div class="form-row" style="width: 380px" >
+        <div style="width: 180px">
+          <label>Contact Email:</label>
+          <input type="email" name="email" placeholder="User@gmail.com" id="email">
+        </div>
+        <div style="width: 180px">
+          <label>Contact Number (Optional):</label>
+          <input type="text" name="phone" placeholder="" id="phone">
+        </div>
+      </div>
+      <button type="button" onclick="saveTempReport()">Get Your Pet Back Home!</button>
+    </form>
+  	</div>
+	<div>
+		<img src="Images/Animals.png" alt="Animals" width="400px">
+	</div>
+	</div>
+	
+	<div class="content">
+		<img src="Images/PHONE.png" alt="Phone" width="100%">
+	</div>
+</div>
+</div>
+	
+	<div class="content-main1" style="background: #FFDE59; background-image: url(Images/Pattern.png);">
+		<div style="display: flex; flex-direction: column; margin-bottom: 50px">
+			<div>
+				<h1 style="font-family: Arial; text-align: center; color: white; text-shadow: 0px 0px 50px grey; font-weight: bolder; font-size: 60px">Help These Pets Back Home!</h1>
+			</div>
+		<div style="display: flex; flex-direction: row; justify-content: center" align="center">
+			<div class="content-inside" style="width: 300px;  margin: 20px">
+				<a href="Franky.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/TORTMOCK1.png" alt="Highlight 1">
+					</div>
+				</div>
+				<div class="pet-info">
+					<h3>Franky</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center;">					
+						<p style="overflow: hidden; height: 20px; width: 40px">BDG</p>
+						<p style="background-color: white; color: black;">&nbsp;Dago, Jalan Sekar Asih 3B</p>
+					</div>
+				</div>
+				</a>
+			</div>
+			<div class="content-inside" style="width: 300px; margin: 20px;">
+				<a href="Miwon.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/DOGMOCK2.png" alt="Highlight 2">
+					</div>
+				</div>
+				<div class="pet-info">
+					<h3>Miwon</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+						<p style="overflow: hidden; height: 20px; width: 40px">BDG</p>
+						<p style="background-color: white; color: black;">&nbsp;Antapani, Jalan Kuningan No. 31</p>
+					</div>
+				</div>
+				</a>
+			</div>
+			<div class="content-inside" style="width: 300px; margin: 20px">
+				<a href="Buddy.html" style="text-decoration: none;">
+				<div class="pet-card">
+					<div class="pet-photo">
+						<img src="Images/DOCKMOCK1.png" alt="Highlight 3">
+					</div>
+				</div>
+				<div class="pet-info">
+					<h3>Buddy</h3>
+					<div style="display: flex; flex-direction: row; justify-content: center">					
+						<p style="overflow: hidden; height: 20px; width: 40px">JKT</p>
+						<p style="background-color: white; color: black;">&nbsp;Senayan, Silihwangsa No. 132</p>
+					</div>
+				</div>
+				</a>
+			</div>
+		</div>
+		</div>
+	</div>
+
+	<div class="content-main1" style="background-color: white; background-image: url(Images/Reunited.png);">
+		<div style="height: 100%">
+			<div class="content-inside" style="display: flex; flex-direction: column; align-items: center; margin: 80px 20px 80px 20px; width: 700px; padding: 20px; border-radius: 20px">
+				<h2 style="margin: 0px 0px 0px 0px; font-size: 30px; color: cadetblue; font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif'">More than 1.545.700 pets have been reunited</h2>
+				<p style="text-align: center; width: 600px; font-size: 17.5px; margin-bottom: 0px">PetTAG is the world’s number one service for reuniting missing animals with 1.545.700 pets reunited and counting! Whether you’ve lost your pet or found somebody else’s, PetTAG is here to help.</p>
+				<button onclick="window.open('Reunited.html')" style="width: auto; text-align: center; border-radius: 10px; font-weight: bold">See Our Reunited Ones</button>		
+			</div>
+		</div>
+
+	</div>
+	
+	
+	<div class="content-main1" style="background-color: white; background-image: url(Images/Pattern.png);">
+		<div style="display: flex; flex-direction: row; justify-content: center; padding-top: 20px">
+			<div style="display: flex; flex-direction: column; width: 50%">
+				<h1 style="width: 500px">&nbsp</h1>
+				<img src="Images/PetRescue.png" alt="PetRescue" style="width: 100%">
+			</div>
+			<div style="padding: 20px;">
+				<div class="content-inside" style="background-color: #68B403 ; display: flex; flex-direction: column; align-items: center; border-radius: 20px">
+				  	<p style="color: white; text-align: justify; font-size: 18px"><strong>PetRescue</strong> is a group of volunteers, rescue owners, shelter employees, veterinarians, and pet lovers just like you.</p>
+					<p style="color: white; text-align: justify; font-size: 18px"><strong>Alerting the PetRescue is FREE</strong> for pet owners. <em>Together, we can help create more happy reunions.</em></p>
+					<button2 onclick="window.open('https://www.petrescue.com.au')" style="width: 200px; color:#003226; text-align: center" type="Go to the PetRescue website"><strong>Join Now!</strong></button2>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<div class="content-main1" style="background-color: white">
+		<div style="display: flex; flex-direction: row; justify-content: center">
+			<div style="width: 500px; display: flex; flex-direction: column; align-items: center" >
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Contact Our Helpers</h1>
+				<div style="width: 250px">
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +1-776-8800-7744</li>
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-877-6677-0005</li>
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-1123-4455-6677</li>
+			  </div>
+			</div>
+			<div style="width: 500px; display: flex; flex-direction: column; align-items: center">
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Visit Our Social Media</h1>
+				<div style="width: 250px">
+				  <li type="none"><img src="Images/Instagram.png" alt="Instagram" width="15px"> @pettag</li>
+					<li type="none"><img src="Images/Facebook.png" alt="Facebook" width="15px"> @pettaghelper</li>
+					<li type="none"><img src="Images/X.png" alt="X" width="15px"> @pettag</li>
+			  </div>
+			</div>
+				<div style="width: 500px; display: flex; flex-direction: column; align-items: center">
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Seek for Veterinarians</h1>
+				<div style="width: 250px">
+				  <li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-851-7163-2227</li>
+					<li type="none"><a href="https://sl1nk.com/Ud5SB" style="text-decoration: none; color: black;"><img src="Images/websitesilhouette.png" alt="Telephone" width="15px"> https://sl1nk.com/Ud5SB</a></li>
+					<li type="none"><a href="https://dokterhewanbandung.com" style="text-decoration: none; color: black;"><img src="Images/websitesilhouette.png" alt="Telephone" width="15px"> https://dokterhewanbandung.com</a></li>
+					</div>
+			  </div>
+		</div>
+		<div>
+			<p style="text-align:center; font-style:italic; color:#555; font-size: 65px; font-family: times new roman">"Connecting pets, reuniting hearts."</p>
+		</div>
+		
+		<img src="Images/FOOTER.png" alt="Footer" width="100%">	
+	</div>
+	
+	<script>
+		function saveTempReport() {
+		  const tempData = {
+			petName: document.getElementById("petName").value,
+			status: document.getElementById("status").value,
+			phone: document.getElementById("phone").value,
+			email: document.getElementById("email").value,
+			oflocation: document.getElementById("oflocation").value
+		  };
+
+		  localStorage.setItem("tempReport", JSON.stringify(tempData));
+		  window.location.href = "Add a New Report.html"; // pindah ke form utama
+		}
+	</script>
+</body>
+</html>

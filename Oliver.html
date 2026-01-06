@@ -1,0 +1,344 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon" type="image/PetTag-icon" href="Images/Favicon.ico">	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<title>Milo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Calibri, sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+		flex-direction: column;
+      margin: 0;
+    }
+	  
+	.navbar {
+  		position: fixed;
+  		top: 0;
+  		left: 0;
+  		width: 100%;
+  		background-color: #2EC4B6;
+  		display: flex;
+  		align-items: stretch;
+  		justify-content: space-around;
+  		z-index: 1000;
+	}
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+	.navbar a {
+  		display: flex;
+  		align-items: center;
+  		justify-content: center;
+  		padding: 0 30px;
+  		text-decoration: none;
+  		color: white;
+  		font-weight: bold;
+  		transition: all 0.3s ease;
+  		height: 100%;
+	}
+
+	.navbar a:hover {
+  		background-color: #24A696;
+	}
+	  
+    /* Konten dummy biar bisa discroll */
+    .content {
+      padding: auto;
+		
+    }
+
+	.content-inside {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+	  
+    .form-container {
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 400px;
+		height: auto;
+		margin: 0px 20px 20px 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #000;
+    }
+
+    label {
+      display: block;
+      margin-top: 12px;
+      font-size: 14px;
+      color: #000;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .form-row {
+      	display: flex;
+		flex-direction: column;
+      	justify-content: space-between;
+      	gap: 10px;
+    }
+
+    .form-row input {
+      width: 100%;
+    }
+
+    button1 {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #32D0C4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button1:hover {
+      background-color: #2FAAA0;
+    }
+	  
+    button2 {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #FFFFFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+
+    button2:hover {
+      background-color: #E4E4E4;
+    }
+	  
+	.content-main2 {
+		display: flex;
+		flex-direction: row;
+		margin-top: 0px;
+      	padding: 20px;
+		align-items: flex-start;
+	  }
+	  
+	.content-main1 {
+		margin-top: 0px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		background: #D0D0D0;
+	  }
+	  
+	  .navbar-background {
+		  width: 100%;
+		  height: auto;
+		  background-image: url("Images/TrackerBG.png");
+		  background-repeat: no-repeat;
+		  margin-top: 100px;
+		  background-size: cover;
+	  }
+
+	  .pet-card {
+		  width: 300px;
+		  border: 1px solid #ccc;
+		  border-radius: 10px;
+		  overflow: hidden;
+		  text-align: center;
+		  transition: 0.3s;
+	  }
+	  
+	  .pet-photo {
+		  aspect-ratio: 1 / 1;
+		  overflow: hidden;
+	  }
+	  
+	  .pet-photo img {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+	  }
+	  
+	  .pet-info h3{
+		  color: grey;
+		  font-size: 25px;
+		  margin-bottom: 0px;
+	  }
+	  
+	  .pet-info p{
+		  color: white;
+		  background-color:#8C1B1D;
+		  border-radius: 5px;
+		  font-weight: bold;
+	  }
+	  
+	  .lost-info p{
+		  color: grey;
+		  font-weight: bold;
+		  margin-right: 10px;
+		  margin-left: 10px;
+		  font-size: 18px;
+		  text-align: left;
+	  }
+	  
+	  .missing-pet-info {
+		  background: #FFFF;
+		  border-radius: 10px;
+		  width: 900px;
+		  margin: 20px;
+		  display: flex;
+		  flex-direction: row;
+		  
+	  }
+	  .pet-info-table td{
+		  color: grey;
+		  font-weight: 500;
+		  padding: 10px;
+		  margin: 10px
+	  }
+	  
+	 .pet-info-table th{
+		  color: grey;
+		 text-align: left;
+	  }
+	  
+	  input::placeholder {
+		  color: #C8C8C8;
+	  }
+	  
+	  .button-social{
+		  background-color: #FFDE59;
+		  padding: 5px;
+		  color: white;
+		  text-shadow: 0px 0px 10px grey;
+		  font-family: calibri;
+		  border-radius: 5px;
+		  box-shadow: 0px 3px 0 0 #9A873A;
+		  text-align: center;
+		  font-weight: bold;
+	  }
+	  
+	  .button-social:hover{
+		  box-shadow: 0px 5px 0 0 #9A873A;
+		  transform: translateY(-3px);
+	  }
+	  
+	  #imagePreview {
+		  width: 100%;
+		  height: 100%;
+		  object-fit: cover;
+	  }
+  </style>
+</head>
+<body>
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <div class="logo"><img src="Images/Logo.png" width="232" height="70" alt=""/></div>
+    <a href="Home.html"><img src="Images/HOME.png" alt="Home" width="200"></a>
+	<a href="Reports.html"><img src="Images/REPORTS.png" alt="Reports" width="200"></a>
+	<a href="Tracker.html"><img src="Images/TRACKER.png" alt="Tracker" width="200"></a>
+	<a href="Reunited.html"><img src="Images/REUNITEDPETS.png" alt="Reunited" width="200"></a>	
+  </div>
+
+	<div class="content-main1" style="align-items: center; background-image: url(Images/PATTERN2.png); background-repeat: repeat; margin-top: 110px;  padding: 20px 0px 20px 0px">
+
+		<div class="content-inside" style="width: 1000px; display: flex; flex-direction: row; background: #E5EBEC; box-shadow: 0px 0px 20px grey">
+			<div style="padding: 20px 0px 0px 0px">
+				<div class="pet-card">
+					<div class="pet-photo" id="imagePreview">
+						<img src="Images/Reunited/Oliver.png" alt="Oliver">
+					</div>
+				</div>
+			</div>
+			<div class="missing-pet-info" style="padding-bottom: 10px">
+				<div class="lost-info" style="margin-left: 20px;">
+					<table class="pet-info-table" width="620px" border="0" style="border-collapse: collapse; font-size: 18px;">
+					  <tbody>
+						<tr>
+							<td></td>
+						</tr>
+						<tr style="border-bottom: 1px solid #E5EBEC">
+							<td style="font-size: 19px"><strong>Oliver, The Travelling Turtle</strong></td>
+						</tr>
+						<tr style="border-bottom: 1px solid #E5EBEC">
+							<td style="font-size: 17.5px">Reunited in Depok</td>
+						</tr>
+						<tr>
+							<td style="font-size: 16.5px; text-align: justify">Most turtles don’t go far, but Oliver was no ordinary turtle. Rafi raised him since college — a tiny creature who somehow became his best friend. One morning, after cleaning the backyard pond, Rafi realized Oliver was gone. He thought it was impossible — turtles move slowly! Days passed, but Oliver never returned. Two weeks later, a pet shop in Depok received a small turtle found near their doorstep. They scanned his PetTAG, and Rafi’s name appeared immediately. When Rafi came to pick him up, the shop owner smiled and said, “He must’ve been on quite a journey.” Rafi just laughed, holding Oliver gently. “Welcome home, little traveler.” 🐢</td>
+						</tr>
+					  </tbody>
+					</table>
+           		</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+	<div class="content-main1" style="background-color: white">
+		<div style="display: flex; flex-direction: row; justify-content: center">
+			<div style="width: 500px; display: flex; flex-direction: column; align-items: center" >
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Contact Our Helpers</h1>
+				<div style="width: 250px">
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +1-776-8800-7744</li>
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-877-6677-0005</li>
+					<li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-1123-4455-6677</li>
+			  </div>
+			</div>
+			<div style="width: 500px; display: flex; flex-direction: column; align-items: center">
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Visit Our Social Media</h1>
+				<div style="width: 250px">
+				  <li type="none"><img src="Images/Instagram.png" alt="Instagram" width="15px"> @pettag</li>
+					<li type="none"><img src="Images/Facebook.png" alt="Facebook" width="15px"> @pettaghelper</li>
+					<li type="none"><img src="Images/X.png" alt="X" width="15px"> @pettag</li>
+			  </div>
+			</div>
+				<div style="width: 500px; display: flex; flex-direction: column; align-items: center">
+				<h1 style="font-family: calibri; font-weight: 100; text-align: center">Seek for Veterinarians</h1>
+				<div style="width: 250px">
+				  <li type="none"><img src="Images/phonesilhouette.png" alt="Telephone" width="15px"> +62-851-7163-2227</li>
+					<li type="none"><a href="https://sl1nk.com/Ud5SB" style="text-decoration: none; color: black;"><img src="Images/websitesilhouette.png" alt="Telephone" width="15px"> https://sl1nk.com/Ud5SB</a></li>
+					<li type="none"><a href="https://dokterhewanbandung.com" style="text-decoration: none; color: black;"><img src="Images/websitesilhouette.png" alt="Telephone" width="15px"> https://dokterhewanbandung.com</a></li>
+					</div>
+			  </div>
+		</div>
+		<div>
+			<p style="text-align:center; font-style:italic; color:#555; font-size: 65px; font-family: times new roman">"Connecting pets, reuniting hearts."</p>
+		</div>
+		
+		<img src="Images/FOOTER.png" alt="Footer" width="100%">	
+	</div>
+
+</body>
+</html>
