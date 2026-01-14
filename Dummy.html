@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<title>Junior</title>
+<title>Home</title>
   <style>
     body {
       margin: 0;
@@ -26,7 +26,7 @@
   		width: 100%;
   		background-color: #2EC4B6;
   		display: flex;
-  		align-items: stretch;
+  		align-items: stretch; /* biar anak-anak isi penuh */
   		justify-content: space-around;
   		z-index: 1000;
 	}
@@ -180,6 +180,10 @@
 		  transition: 0.3s;
 	  }
 	  
+	  .pet-card:hover{
+		  transform: scale(1.05);
+	  }
+
 	  .pet-photo {
 		  aspect-ratio: 1 / 1;
 		  overflow: hidden;
@@ -203,63 +207,6 @@
 		  border-radius: 5px;
 		  font-weight: bold;
 	  }
-	  
-	  .lost-info p{
-		  color: grey;
-		  font-weight: bold;
-		  margin-right: 10px;
-		  margin-left: 10px;
-		  font-size: 18px;
-		  text-align: left;
-	  }
-	  
-	  .missing-pet-info {
-		  background: #FFFF;
-		  border-radius: 10px;
-		  width: 900px;
-		  margin: 20px;
-		  display: flex;
-		  flex-direction: row;
-		  
-	  }
-	  .pet-info-table td{
-		  color: grey;
-		  font-weight: 500;
-		  padding: 10px;
-		  margin: 10px
-	  }
-	  
-	 .pet-info-table th{
-		  color: grey;
-		 text-align: left;
-	  }
-	  
-	  input::placeholder {
-		  color: #C8C8C8;
-	  }
-	  
-	  .button-social{
-		  background-color: #FFDE59;
-		  padding: 5px;
-		  color: white;
-		  text-shadow: 0px 0px 10px grey;
-		  font-family: calibri;
-		  border-radius: 5px;
-		  box-shadow: 0px 3px 0 0 #9A873A;
-		  text-align: center;
-		  font-weight: bold;
-	  }
-	  
-	  .button-social:hover{
-		  box-shadow: 0px 5px 0 0 #9A873A;
-		  transform: translateY(-3px);
-	  }
-	  
-	  #imagePreview {
-		  width: 100%;
-		  height: 100%;
-		  object-fit: cover;
-	  }
   </style>
 </head>
 <body>
@@ -272,36 +219,9 @@
 	<a href="Reunited.html"><img src="Images/REUNITEDPETS.png" alt="Reunited" width="200"></a>	
   </div>
 
-	<div class="content-main1" style="align-items: center; background-image: url(Images/PATTERN2.png); background-repeat: repeat; margin-top: 110px;  padding: 20px 0px 20px 0px">
-
-		<div class="content-inside" style="width: 1000px; display: flex; flex-direction: row; background: #E5EBEC; box-shadow: 0px 0px 20px grey">
-			<div style="padding: 20px 0px 0px 0px">
-				<div class="pet-card">
-					<div class="pet-photo" id="imagePreview">
-						<img src="Images/Reunited/Bella.png" alt="Bella">
-					</div>
-				</div>
-			</div>
-			<div class="missing-pet-info" style="padding-bottom: 10px">
-				<div class="lost-info" style="margin-left: 20px;">
-					<table class="pet-info-table" width="620px" border="0" style="border-collapse: collapse; font-size: 18px;">
-					  <tbody>
-						<tr>
-							<td></td>
-						</tr>
-						<tr style="border-bottom: 1px solid #E5EBEC">
-							<td style="font-size: 19px"><strong>Bella, The Curious Dog</strong></td>
-						</tr>
-						<tr style="border-bottom: 1px solid #E5EBEC">
-							<td style="font-size: 17.5px">Reunited in Taman Lansia, Bandung</td>
-						</tr>
-						<tr>
-							<td style="font-size: 16.5px; text-align: justify">After being missing for almost two weeks, Bella was finally found wandering near a park in Bandung. Thanks to a PetTAG alert shared online, her owner, Nadia, received a call from a kind jogger who recognized Bella’s tag. Nadia spent days putting up posters, calling shelters, and asking neighbors. Every night felt longer than the last. Two weeks later, a kind jogger named Dimas saw a familiar-looking dog wandering near Taman Lansia, Bandung. He scanned the PetTAG on Bella’s collar and instantly got Nadia’s contact. Within 15 minutes, Nadia received the best call of her life. When they finally reunited, Bella ran straight into her arms, soaking wet but wagging her tail like nothing had changed. “It felt like finding a part of my heart again,” Nadia said with tears in her eyes.</td>
-						</tr>
-					  </tbody>
-					</table>
-           		</div>
-			</div>
+	<div class="content-main1" style="align-items: center; background-image: url(Images/PATTERN2.png); background-repeat: repeat; margin-top: 110px; padding: 20px">
+		<div class="content-inside" style="width: 500px">
+			
 		</div>
 	</div>
 	
@@ -339,6 +259,5 @@
 		
 		<img src="Images/FOOTER.png" alt="Footer" width="100%">	
 	</div>
-
 </body>
 </html>
